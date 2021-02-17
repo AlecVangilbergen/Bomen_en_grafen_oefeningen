@@ -61,7 +61,12 @@ public class Recursie {
 
     // oefening 6
     public static String changeXY(String s) {
-        throw new UnsupportedOperationException("Not yet implemented");
+        if (s == null)
+            throw new IllegalArgumentException();
+        if (s.length() == 0)
+            return s;
+        else
+            return ((s.charAt(0) == 'x' ? "y" : s.charAt(0)) + changeXY(s.substring(1)));
     }
 
     // oefening 7

@@ -72,7 +72,16 @@ public class Recursie {
     // oefening 7
 
     public static String changePi(String s) {
-        throw new UnsupportedOperationException("Not yet implemented");
+        if (s == null)
+            throw new IllegalArgumentException();
+        if (s.length() <= 1)
+            return s;
+        else {
+            if ((s.substring(0, 2)).equals("pi")) {
+                return "3.14" + Recursie.changePi(s.substring(2));
+            } else
+                return s.charAt(0) + Recursie.changePi(s.substring(1));
+        }
     }
 
     // oefening 8:
